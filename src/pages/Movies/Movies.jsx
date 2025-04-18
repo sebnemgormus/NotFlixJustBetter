@@ -1,24 +1,26 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import hero_tvshows from "../../assets/hero-tvshows.jpg";
-import hero_tvshows_title from "../../assets/hero_tvshows_title.png";
+import hero_movies from "../../assets/hero_movies.jpg";
+import hero_movies_title from "../../assets/hero_movies_title.png";
 import play_icon from "../../assets/Play_icon.png";
 import info_icon from "../../assets/info_icon.png";
 import TitleCards from "../../components/TitleCards/TitleCards";
 import Footer from "../../components/Footer/Footer";
 
-const TvShows = () => {
+const Movies = () => {
+
+  
   return (
     <div className="tvshows">
       <Navbar />
       <div className="hero">
-        <img src={hero_tvshows} alt="" className="banner-img" />
+        <img src={hero_movies} alt="" className="banner-img" />
         <div className="hero-caption">
-          <img src={hero_tvshows_title} alt="" className="caption-img" />
+          <img src={hero_movies_title} alt="" className="caption-img" />
           <p>
-            Physicists Leonard and Sheldon find their nerd-centric social circle
-            with pals Howard and Raj expanding when aspiring actress Penny moves
-            in next door.
+            A dramatization of the life story of J. Robert Oppenheimer, the
+            physicist who had a large hand in the development of the atomic
+            bombs that brought an end to World War II.
           </p>
           <div className="hero-btns">
             <button className="btn">
@@ -34,7 +36,7 @@ const TvShows = () => {
         </div>
       </div>
       <div className="more-cards">
-        <TitleCards title={"TV Dramas"} category={"top_rated"} />
+        <TitleCards title={"Blockbuster Movies"} category={"top_rated"} />
         <TitleCards title={"Only on Netflix"} category={"popular"} />
         <TitleCards title={"Upcoming"} category={"upcoming"} />
         <TitleCards title={"Top Pics for You"} category={"now_playing"} />
@@ -44,4 +46,4 @@ const TvShows = () => {
   );
 };
 
-export default TvShows;
+export default Movies;

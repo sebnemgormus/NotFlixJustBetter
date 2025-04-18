@@ -8,6 +8,10 @@ import { auth } from './firebase'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TvShows from './pages/TvShows/TvShows'
+import Movies from './pages/Movies/Movies'
+import NewPopular from './pages/NewPopular/NewPopular'
+import MyList from './pages/MyList/MyList'
+import Browse from './pages/Browse/Browse'
 
 function App() {
 
@@ -31,6 +35,10 @@ function App() {
       <Routes>
        <Route path='/' element={ <Home/>}/>
        <Route path='/tvshows' element={ <TvShows/>}/>
+       <Route path='/movies' element={ <Movies/>}/>
+       <Route path='/popular' element={ <NewPopular/>}/>
+       <Route path='/mylist' element={ <MyList/>}/>
+       <Route path='/languages' element={ <Browse/>}/>
        <Route path='/login' element={ <Login/>}/>
        <Route path='/player/:id' element={ <Player/>}/>
       </Routes>

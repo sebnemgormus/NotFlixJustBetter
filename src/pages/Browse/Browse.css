@@ -1,0 +1,56 @@
+.browse {
+    margin-top: 100px;
+}
+
+.browse-filter {
+    padding-left: 6%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: baseline;
+    width: 94%; 
+}
+
+.browse-filter h1 {
+    margin: 0; 
+    font-size: 24px; 
+}
+
+.browse-list-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.preference-dropdown {
+    margin-bottom: 15px;
+    width: 200px;
+}
+
+.preference-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .browse-filter {
+        padding-left: 3%; 
+        flex-direction: column;
+    }
+
+    .browse-list-right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .preference-dropdown {
+        width: 100%;
+    }
+}

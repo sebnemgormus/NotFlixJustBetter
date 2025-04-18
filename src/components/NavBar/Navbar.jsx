@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.png'
-import searchIcon from '../../assets/search_icon.svg'
 import bellIcon from '../../assets/bell_icon.svg'
 import profileImg from '../../assets/profile_img.png'
 import dropdownIcon from '../../assets/caret_icon.svg'
@@ -9,6 +8,9 @@ import { logout, auth, db } from '../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import { query, getDocs, collection, where } from 'firebase/firestore'
 import { Link, useLocation } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar'
+
+
 
 const Navbar = () => {
   const navRef = useRef()
@@ -52,7 +54,7 @@ const Navbar = () => {
   return (
     <div ref={navRef} className='navbar'>
       <div className="navbar-left">
-        <img src={logo} alt="netflix logo" />
+        <Link to="/"><img src={logo} alt="netflix logo" /></Link>
         <ul>
           <li className={isActive('/')}>
             <Link to="/">Home</Link>
@@ -75,7 +77,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-right">
-        <img src={searchIcon} className='icons' alt="search icon" />
+        <SearchBar/>
         <p>{username ? username : "Loading..."}</p>
         <img src={bellIcon} className='icons' alt="bell icon" />
         <div className='navbar-profile'>

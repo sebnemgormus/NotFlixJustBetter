@@ -7,11 +7,16 @@ import profileImg from '../../assets/profile_img.png'
 import dropdownIcon from '../../assets/caret_icon.svg'
 import { logout, auth, db } from '../../firebase'
 import { onAuthStateChanged } from 'firebase/auth'
-import { doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore'
+import { query, getDocs, collection, where } from 'firebase/firestore'
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const navRef = useRef()
   const [username, setUsername] = useState("")
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const isActive = (path) => currentPath === path ? "nav-item active" : "nav-item";
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -34,7 +39,7 @@ const Navbar = () => {
             setUsername(userData.name);
           }
         } catch (err) {
-          console.error("Kullanıcı adı alınırken hata oluştu:", err);
+          console.error("Something went wrong...", err);
         }
       } else {
         setUsername("");
@@ -49,12 +54,24 @@ const Navbar = () => {
       <div className="navbar-left">
         <img src={logo} alt="netflix logo" />
         <ul>
-          <li>Home</li>
-          <li>TV Shows</li>
-          <li>Movies</li>
-          <li>New & Popular</li>
-          <li>My List</li>
-          <li>Browse by Languages</li>
+          <li className={isActive('/')}>
+            <Link to="/">Home</Link>
+          </li>
+          <li className={isActive('/tvshows')}>
+            <Link to="/tvshows">TV Shows</Link>
+          </li>
+          <li className={isActive('/movies')}>
+            <Link to="/movies">Movies</Link>
+          </li>
+          <li className={isActive('/popular')}>
+            <Link to="/popular">New & Popular</Link>
+          </li>
+          <li className={isActive('/mylist')}>
+            <Link to="/mylist">My List</Link>
+          </li>
+          <li className={isActive('/languages')}>
+            <Link to="/languages">Browse by Languages</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-right">

@@ -67,6 +67,22 @@
     display: none;
 }
 
+.navbar-left ul li a {
+    text-decoration: none; 
+    color: #e5e5e5;   
+    transition: color 0.6s ease;    
+  }
+  
+  .navbar-left ul li a:hover {
+    color: #dbdbddb3;      
+  }
+
+  .nav-item.active {
+    color: white;
+    font-weight: 500;
+  }
+  
+
 .navbar .dropdown p {
     font-size: 12px;
     cursor: pointer;
